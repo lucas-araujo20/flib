@@ -70,18 +70,24 @@ para abrir o site acesse http://127.0.0.1:8000 no navegador de sua preferência 
 
 ## Telas
 
-**Login**
+### Login
 
 ![image](https://github.com/lucas-araujo20/lucas-araujo20/assets/146901361/e307ba44-3874-4a58-bc0a-cc4005a34283)
 
-**Home**
+### Home
 
 ![image](https://github.com/lucas-araujo20/lucas-araujo20/assets/146901361/535ba713-a5be-43d6-bdcc-9adabe4bf2f8)
 
-**Clientes**
+### Clientes
 
 ![image](https://github.com/lucas-araujo20/lucas-araujo20/assets/146901361/ce41fe93-7c06-4c40-ba27-a977094f9094)
 
-**Livros**
+### Livros
+
+![image](https://github.com/lucas-araujo20/lucas-araujo20/assets/146901361/72701461-c0c0-4968-8842-e915997a3094)
+
+### Locações
+
+![image](https://github.com/lucas-araujo20/lucas-araujo20/assets/146901361/1c2d772b-edd1-4e02-8285-c993c6a86470)
 
 **Espero que tenha ficado claro, bom proveito do site:)**
