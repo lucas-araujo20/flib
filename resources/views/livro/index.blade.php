@@ -55,6 +55,7 @@
                                 <div class="locacao mb-3">
                                     <h5>Livro já alugado</h5>
                                 </div>
+                                <p class="opacity-0">{{$count = 0}}</p>
                             @endif
                         </div>
 
