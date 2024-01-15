@@ -17,6 +17,7 @@ class Cliente extends Model
     ];
 
     public function livros(){
-        return $this->belongsToMany(Livro::class);
+        return $this->belongsToMany(Livro::class)
+                ->withPivot(['active', 'id']);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LivroController;
-
+use App\Http\Controllers\LocacaoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,7 @@ use App\Http\Controllers\LivroController;
 
 //home
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/h', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/', function(){
@@ -51,4 +51,9 @@ Route::get('/livro/create', [LivroController::class, 'create'])->middleware('aut
 Route::post('/livro', [LivroController::class, 'store'])->middleware('auth')->name('livro.store');
 Route::get('/livro/{livro}/edit', [LivroController::class, 'edit'])->middleware('auth')->name('livro.edit');
 Route::put('/livro/{livro}/update', [LivroController::class, 'update'])->middleware('auth')->name('livro.update');
-Route::get('/locacao', [LivroController::class, 'locacao'])->middleware('auth')->name('livro.locacao');
+
+//locacao
+Route::get('/locacao', [LocacaoController::class, 'locacao'])->middleware('auth')->name('locacao.index');
+Route::get('/locacao/{livro}', [LocacaoController::class, 'locar'])->middleware('auth')->name('locacao.locar');
+Route::post('/locar/{livro}', [LocacaoController::class, 'store'])->middleware('auth')->name('locacao.store');
+Route::put('/locacao/{livro}/update', [LocacaoController::class, 'update'])->middleware('auth')->name('locacao.update');

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('cliente_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('livro_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

@@ -13,11 +13,12 @@ class Livro extends Model
         'nome',
         'enredo',
         'imagem',
-        'estoque',
+        'autor',
         'user_id',
     ];
 
     public function clientes(){
-        return $this->belongsToMany(Cliente::class);
+        return $this->belongsToMany(Cliente::class)
+                ->withPivot(['active', 'id']);
     }
 }

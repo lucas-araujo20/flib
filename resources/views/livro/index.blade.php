@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<p class="opacity-0">{{$count = 0}}</p>
 <div class="container-fluid">
     <div class="mt-5 ml-5 pl-5">
 
@@ -25,8 +26,8 @@
                                 <h2 class="card-title">{{$livro->nome}}</h2>                               
                             </div>
 
-                            <div class='estoque'>
-                                <h4 class='card-title'>Estoque: {{$livro->estoque}}</h4>
+                            <div class='autor'>
+                                <h4 class='card-title'>Autor: {{$livro->autor}}</h4>
                             </div>
 
                             <div class="enredo">
@@ -34,13 +35,27 @@
                             </div>
                         </div>
 
+                        
                         <div class="botões">
-                            <div class="locacao mb-3">
-                                <a href="#" class="btn btn-outline-primary btn-block">Alugar</a>
-                            </div>
-                            <div class="editar">
+                            <div class="editar pb-3">
                                     <a href="{{route('livro.edit', ['livro' => $livro])}}" class="btn btn-outline-primary btn-block">Editar </a>
                             </div>
+
+                            @foreach($livro->clientes as $cliente)
+                                @if($cliente->pivot->active == 1)
+                                    <p class="opacity-0">{{$count++}}</p>
+                                @endif
+                            @endforeach
+
+                            @if($count < 1)
+                                <div class="locacao mb-3">
+                                    <a href="{{route('locacao.locar', ['livro' => $livro])}}" class="btn btn-outline-primary btn-block">locar</a>
+                                </div>
+                            @else
+                                <div class="locacao mb-3">
+                                    <h5>Livro já alugado</h5>
+                                </div>
+                            @endif
                         </div>
 
                     </div>   

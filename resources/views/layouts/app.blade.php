@@ -61,7 +61,7 @@
                                     <a class="dropdown-item" href="{{route('livro.index')}}">
                                     Livros</a>
 
-                                    <a class="dropdown-item" href="{{route('user.index')}}">
+                                    <a class="dropdown-item" href="{{route('locacao.index')}}">
                                     Locações</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

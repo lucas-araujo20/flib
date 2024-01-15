@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{$livro}}
     <div class="col-12 text center my-5">
         <h1 class="text-center">Editar Livro</h1>
     </div>
@@ -24,8 +25,8 @@
 
             <div class="form-group p-3">
                 <div class="col-md-6 offset-md-3">
-                    <label for="estoque">estoque:</label>
-                    <input type='number' id="estoque" class="form-control" name='estoque' placeholder='estoque' value="{{$livro->estoque}}">
+                    <label for="autor">autor:</label>
+                    <input type='text' id="autor" class="form-control" name='autor' placeholder='autor' value="{{$livro->autor}}">
                 </div>
             </div>
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->text('enredo');
             $table->string('imagem');
-            $table->integer('estoque');
+            $table->string('autor');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

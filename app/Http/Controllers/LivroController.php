@@ -23,14 +23,14 @@ class LivroController extends Controller
         $data = $request->validate([
             'nome'=>'required',
             'enredo'=>'required',
-            'estoque'=>'required|numeric'
+            'autor'=>'required'
         ]);
 
         $livro = new Livro;
 
         $livro->nome = $request->nome;
         $livro->enredo = $request->enredo;
-        $livro->estoque = $request->estoque;
+        $livro->autor = $request->autor;
         $livro->user_id = $id;
 
         if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
@@ -58,12 +58,12 @@ class LivroController extends Controller
         $data = $request->validate([
             'nome'=>'required',
             'enredo'=>'required',
-            'estoque'=>'required|numeric'
+            'autor'=>'required'
         ]);
 
         $livro->nome = $request->nome;
         $livro->enredo = $request->enredo;
-        $livro->estoque = $request->estoque;
+        $livro->autor = $request->autor;
 
         if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
             $img = $request->imagem;
@@ -80,11 +80,5 @@ class LivroController extends Controller
         $livro->update();
 
         return redirect(route('livro.index'));
-    }
-
-    public function locacao(){
-        $id = auth::id();
-        $livros = Livro::with('clientes')->where('user_id', $id)->get();
-        return view('livro.locacao', ['livros' => $livros]);
     }
 }

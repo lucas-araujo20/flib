@@ -24,8 +24,8 @@
 
             <div class="form-group p-3">
                 <div class="col-md-6 offset-md-3">
-                    <label for="estoque">estoque:</label>
-                    <input type='number' id="estoque" class="form-control" name='estoque' placeholder='estoque'>
+                    <label for="autor">autor:</label>
+                    <input type='text' id="autor" class="form-control" name='autor' placeholder='autor'>
                 </div>
             </div>
 
